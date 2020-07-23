@@ -1,1 +1,144 @@
-# ipfs-ecosystem
+# IPFS Ecosystem
+
+![](https://i.imgur.com/RctC3Kh.png)
+
+- https://discuss.ipfs.io/c/ecosystem/15
+- https://awesome.ipfs.io/
+    - https://github.com/ipfs/awesome-ipfs
+- https://docs.ipfs.io/concepts/usage-ideas-examples/
+- https://github.com/ipfs/awesome-ipfs/issues/304
+- https://github.com/ipfs/community/tree/master/ecosystem-audit
+
+---
+
+
+- Data
+    - https://github.com/orbitdb/orbit-db
+    - https://qri.io/
+    - https://arbo.re/
+    - https://explorecatena.com
+    - https://fleek.co/
+    - https://hut34.io/
+- Identity
+    - https://www.civic.com/
+    - https://nomios.io/
+    - https://unstoppabledomains.com/
+    - https://www.uport.me/
+    - https://handshake.org/
+    - https://ens.domains/
+    - https://github.com/decentralized-identity/ion
+    - https://zinc.work/
+- Persistence
+    - https://infura.io/
+    - https://textile.io/
+    - https://pinata.cloud/
+    - https://temporal.cloud/
+    - https://www.eternum.io/
+    - https://cluster.ipfs.io/
+- Social Media
+    - https://3box.io/
+    - https://berty.tech/
+    - https://github.com/orbitdb/orbit
+    - https://peepeth.com/welcome
+    - https://karmaapp.io/
+    - https://iris.to/
+    - https://akasha.world/
+    - https://indorse.io/
+    - V thing
+- Integrations & Collaborations
+    - https://brave.com/
+    - https://www.opera.com/
+    - https://www.google.com/chrome/
+    - https://www.chromium.org/
+    - https://ethereum.org/en/
+    - https://metamask.io/
+    - https://github.com/rs-ipfs/rust-ipfs
+    - https://guix.gnu.org/
+    - https://www.netflix.com/
+    - https://nixos.org/
+    - https://azure.microsoft.com/en-us/
+    - https://www.cloudflare.com/
+- Prediction
+    - https://www.augur.net/
+    - https://playtowincasinos.co/
+    - ~~https://luckydapps.com/cryptodice/~~
+    - https://cryptobets.cc/#/
+    - ~~mobius2d~~
+    - https://virtue.poker/
+- Marketplace
+    - https://openbazaar.org/
+    - https://www.originprotocol.com/en
+    - https://bounty0x.io/
+    - https://ethlance.com/
+    - https://enzypt.io/
+    - https://namebazaar.io/
+    - https://gethaven.app/
+    - https://portion.io/
+- NFT
+    - https://github.com/dluxio/dluxio
+    - https://decentraland.org/
+    - https://digitalartchain.com/
+    - https://glossy.cards/
+    - https://mokens.io/
+    - Superrare / Makersplace / KnownOrigin?
+- Governance
+    - https://govblocks.io/
+    - https://democracy.earth/
+    - https://aragon.org/
+- Exchange
+    - https://dether.io/
+    - https://faa.st/
+    - https://swaponline.io/
+    - https://amisdex.github.io/amis-exchange-www/
+- Finance
+    - https://www.coinomi.com/en/
+    - https://request.network/en/
+    - https://ravencoin.org/
+    - https://www.myetherwallet.com/
+    - https://kyber.network/
+    - https://web.colu.com/
+    - https://bloom.co/
+    - ~~https://settle.finance/blog/goodbye-settle/~~
+    - https://uniswap.org/
+    - https://marketprotocol.io/
+- Content
+    - https://d.tube/
+    - https://www.anytype.io/
+    - https://everipedia.org/
+    - https://www.alexandria.io/
+    - https://matters.news/
+    - https://peergos.org/
+    - https://peerpad.net/#/
+    - https://dlive.tv/
+    - https://busterlabs.github.io/Partyshare/
+    - https://dsound.audio/#!/feed
+    - https://view.ly/new
+    - ~~https://twitter.com/steepshot~~
+    - ~~viuly.com~~
+    - https://ujomusic.com/
+    - https://audius.co/
+- Other
+    - https://github.com/oduwsdl/ipwb
+    - https://www.dappkit.io/
+    - https://kauri.io/
+    - http://karmapayapp.com/
+    - https://simpleaswater.com/
+    - https://www.moibit.io/
+    - ~~https://sprtshub.io/~~
+    - ~~http://adchain.com/~~
+    - https://monitorchain.com/
+    - https://ipfssearch.io/en/
+    - ~~https://www.iku.network/~~
+    - https://www.wings.ai/
+    - https://stake.fish/en/
+    - https://github.com/ipfs/distributed-wikipedia-mirror
+    - https://cyb.ai/
+    - https://cyber.page/
+    - https://filestorm.net/
+    - https://tallylab.com/
+    - https://www.edchain.io/
+    - https://robonomics.network/
+    - https://fission.codes/
+    - https://www.actyx.com/
+    - https://envirodatagov.org/
+    - https://dappnode.io/
