@@ -80,7 +80,9 @@
     - https://digitalartchain.com/
     - https://glossy.cards/
     - https://mokens.io/
-    - Superrare / Makersplace / KnownOrigin?
+    - https://knownorigin.io/
+    - https://superrare.co/
+    - https://makersplace.com/
 - Governance
     - https://govblocks.io/
     - https://democracy.earth/
