@@ -38,7 +38,7 @@
 - Social Media
     - https://3box.io/
     - https://berty.tech/
-    - https://github.com/orbitdb/orbit
+    - https://github.com/orbitdb/orbit-web
     - https://peepeth.com/welcome
     - https://karmaapp.io/
     - https://iris.to/
