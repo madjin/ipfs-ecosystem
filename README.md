@@ -38,7 +38,7 @@
 - Social Media
     - https://3box.io/
     - https://berty.tech/
-    - https://github.com/orbitdb/orbit
+    - https://github.com/orbitdb/orbit-web
     - https://peepeth.com/welcome
     - https://karmaapp.io/
     - https://iris.to/
@@ -80,7 +80,9 @@
     - https://digitalartchain.com/
     - https://glossy.cards/
     - https://mokens.io/
-    - Superrare / Makersplace / KnownOrigin?
+    - https://knownorigin.io/
+    - https://superrare.co/
+    - https://makersplace.com/
 - Governance
     - https://govblocks.io/
     - https://democracy.earth/
