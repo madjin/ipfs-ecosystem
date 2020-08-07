@@ -1,0 +1,30 @@
+"screenshot"
+{
+	"hasBigFile"		"1"
+	"hasJSFile"		"1"
+	"hasThumbFile"		"1"
+	"created"		"1596744179"
+	"id"		"meta_hood17"
+	"instance"
+	{
+		"id"		"id-sfqcS4S4egSWHdVfbCN"
+		"mapId"		"id4aa1a9f2"
+		"title"		"ipfs ecosystem"
+	}
+	"map"
+	{
+		"id"		"id4aa1a9f2"
+		"title"		"meta_hood"
+		"file"		"meta_hood.bsp"
+	}
+	"camera"
+	{
+		"position"		"1424.4416503906 3143.5300292969 80.0312500000"
+		"rotation"		"2.5096817017 -159.7255554199 0.0000000000"
+	}
+	"body"
+	{
+		"position"		"1424.4416503906 3143.5300292969 16.0312500000"
+		"rotation"		"0.0000000000 -159.7255554199 0.0000000000"
+	}
+}

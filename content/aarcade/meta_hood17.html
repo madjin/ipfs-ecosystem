@@ -1,0 +1,241 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+	      <meta property="og:site_name" content="Anarchy Arcade"/>
+	      <meta property="og:description" content="Objects are shortcuts. Click objects to watch their videos in your web browser, or launch their games w/ Steam."/>
+	      <meta property="og:type" content="technology"/>
+	      <meta property="og:title" content="taco's Interactive Screenshot"/><!-- dynamic -->
+	      <meta property="og:image" content="meta_hood17.jpg"/><!-- dynamic -->
+	      <meta property="og:url" content="meta_hood17.html"/><!-- dynamic -->
+		<title>taco's Interactive Screenshot</title><!-- dynamic -->
+		<style>
+			html, body
+			{
+				margin: 0;
+				width: 100%;
+				height: 100%;
+			}
+		</style>
+		<script>
+			// SNAP VIWER VERSION 0.1
+
+			// http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+			function getParameterByName(name, url)
+			{
+				if (!url) url = window.location.href;
+				name = name.replace(/[\[\]]/g, "\\$&");
+				var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+				results = regex.exec(url);
+				if (!results) return null;
+				if (!results[2]) return '';
+				return decodeURIComponent(results[2].replace(/\+/g, " "));
+			}
+
+			var url = document.location.href;
+			var found = url.lastIndexOf("/");
+			if( found < 0 )
+				found = url.lastIndexOf("\\");
+			if( found > 0 )
+				url = url.substring(found+1);
+			found = url.indexOf(".");
+			if( found > 0 )
+				url = url.substring(0, found);
+			snapRef = url;
+
+			//console.log();
+			//var snapRef = getParameterByName("ref");
+			if( !!!snapRef || snapRef === "" )
+			{
+				console.log("ERROR: No snap referenced.");
+				snapRef = "myshot";//http://www.aarcade.tv/arcadesnap.js";
+			}
+
+			var found = snapRef.lastIndexOf(".js");
+			if( found === snapRef.length-3 )
+				snapRef = snapRef.substring(0, snapRef.length-3);
+
+			var foundDot = snapRef.indexOf(".");
+			var foundSlash = snapRef.lastIndexOf("/");
+			if( foundDot >= 0 && foundSlash >= 0 && foundDot < foundSlash && snapRef.toLowerCase().indexOf("http") !== 0 )
+				snapRef = "http://" + snapRef;
+
+			var imageName = snapRef;
+			found = imageName.lastIndexOf(".js");
+			if( found > 0 )
+			{
+				imageName = imageName.substring(0, found);
+			}
+			imageName += ".jpg";
+
+/*
+			var metaImage = document.createElement("meta");
+			metaImage.setAttribute("property", "og:image");
+			metaImage.setAttribute("content", "http://anarchyarcade.com/2d/sm_orchard10.jpg");
+			document.getElementsByTagName("head")[0].appendChild(metaImage);*/
+		</script>
+	</head>
+	<body>
+		<style>
+			#testerTitle, #testerImg
+			{
+				pointer-events: none;
+				-webkit-transition: all 0.5s;
+				white-space: nowrap;
+				overflow: hidden;
+				max-width: 100%;
+				text-overflow: ellipsis;
+				color: #fff;
+			}
+
+			.markerBox
+			{
+				position: absolute;
+				border: none;
+			}
+
+			.markerBox:hover
+			{
+				background-color: rgba(255, 255, 255, 0.1);
+				border: 1px solid rgba(255, 255, 255, 0.5);
+			}
+		</style>
+
+		<div id="snapContainer" style="position: absolute; left: 0; top: 0; overflow: hidden;">
+			<img id="snapImage" src="" />
+		</div>
+
+		<img id="testerImg" style="position: fixed; bottom: 150px; left: 60px; max-width: 400px; max-height: 300px; opacity: 0;" />
+
+		<div id="testerTitle" style="position: fixed; bottom: 0; left: 0; right: 0; font-size: 40px; font-family: Arial; font-weight: 900; padding: 60px; background-image: -webkit-gradient(linear, center top, center  bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.9)), color-stop(.5, rgba(0,0,0,0.8))); opacity: 0;"></div>
+
+		<script>
+			var g_library;
+			function showMediaScreenshot(snapdata)
+			{
+				var snapContainer = document.querySelector("#snapContainer");
+				g_library = snapdata.library;
+
+				//var testerDiv;
+				//var colors = ["#ff0000", "#bb0000", "#990000", "#550000", "#00ff00", "#00bb00", "#009900", "#005500"];
+				var marker;
+				var markerKeys = Object.keys(snapdata.markers);
+				var numObjects = markerKeys.length;
+				for( var i = 0; i < numObjects; i++ )
+				{
+					marker = snapdata.markers[markerKeys[i]];
+					if( !!!marker.object.item || marker.object.item === "" || marker.object.item === marker.object.model )
+						continue;
+					
+					var markerBox = document.createElement('div');
+					markerBox.className = "markerBox";
+					//markerBox.style.cssText = "position: absolute; background-color: rgba(255, 255, 255, 0.3);";
+					markerBox.addEventListener("mouseover", function()
+					{
+						var item = g_library.items[this.marker.object.item];
+						var model = g_library.models[this.marker.object.model];
+						var title = (!!item) ? item.title : "Prop: " + model.title;
+						var container = document.querySelector("#testerTitle");
+						container.innerText = title;
+						container.style.opacity = "1.0";
+						var img = document.querySelector("#testerImg");
+						img.src = item.screen;
+						img.style.opacity = "1.0";
+					}.bind(markerBox));
+					markerBox.addEventListener("mouseout", function()
+					{
+						var container = document.querySelector("#testerTitle");
+						container.style.opacity = "0";
+						var img = document.querySelector("#testerImg");
+						img.style.opacity = "0";
+					}.bind(markerBox));
+					markerBox.addEventListener("click", function()
+					{
+
+						function isWebValue(value)
+						{
+							return (value.toLowerCase().indexOf("http") === 0 || value.toLowerCase().indexOf("www") === 0);
+						}
+
+						function isYouTubeValue(value)
+						{
+							return (isWebValue(value) && (value.toLowerCase().indexOf("youtube") >= 0 || value.toLowerCase().indexOf("youtu.be") >= 0));
+						}
+
+						function isSteamAppID(value)
+						{
+							return ((parseInt(value)+"") == value);
+						}
+
+						function getLaunchURL(item)
+						{
+							var fields = ["file", "reference", "preview", "screen", "marquee"];
+
+							var testValue = item.file;
+							//for( var i = 0; i < fields.length; i++ )
+							//{
+								//testValue = item[fields[i]];
+								if( isSteamAppID(testValue) )
+									return testValue;
+							//}
+
+							// otherwise, check for YouTube URLs
+							for( var i = 0; i < fields.length; i++ )
+							{
+								testValue = item[fields[i]];
+								if( isYouTubeValue(testValue) )
+									return testValue;
+							}
+
+							// otherwise, check for URLs
+							for( var i = 0; i < fields.length; i++ )
+							{
+								testValue = item[fields[i]];
+								if( isWebValue(testValue) )
+									return testValue;
+							}
+						}
+
+						var item = g_library.items[this.marker.object.item];
+						if( !!item )
+						{
+							var launchURL = getLaunchURL(item);
+							if( isWebValue(launchURL))
+								window.open(launchURL, "web");
+							else if( isSteamAppID(launchURL) )
+								window.location = "steam://run/" + launchURL;
+							else
+								console.log("Invalid launch URL.");
+						}
+						else
+							console.log("ERROR: Could not find item.");
+					}.bind(markerBox));
+					markerBox.style.left = marker.min.x + "px";
+					markerBox.style.top = marker.min.y + "px";
+					markerBox.style.width = (marker.max.x - marker.min.x) + "px";
+					markerBox.style.height = (marker.max.y - marker.min.y) + "px";
+					markerBox.marker = marker;
+					//document.body.appendChild(markerBox);
+					snapContainer.appendChild(markerBox);
+				}
+			}
+		</script>
+
+		<script>
+			var snapScript = document.createElement("script");
+			snapScript.src = snapRef + ".js";
+			snapScript.onload = function()
+			{
+				var snapImage = document.querySelector("#snapImage");
+				snapImage.addEventListener("load", function(e)
+				{
+					var snapContainer = document.querySelector("#snapContainer");
+					snapContainer.style.width = this.width + "px";
+					snapContainer.style.height = this.height + "px";
+					showMediaScreenshot(g_snapdata);
+				}.bind(snapImage));
+				snapImage.src = imageName;
+			};
+			document.getElementsByTagName("head")[0].appendChild(snapScript);
+		</script>
+	</body>
+</html>
