@@ -1,5 +1,7 @@
 # IPFS Ecosystem
 
+Lets visualize the IPFS ecosystem into a virtual world that we can build and explore together!
+
 ![](https://i.imgur.com/RctC3Kh.png)
 
 - https://discuss.ipfs.io/c/ecosystem/15
